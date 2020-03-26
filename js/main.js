@@ -4,7 +4,11 @@ const ctx = canvas.getContext('2d')
 const playground = new Image()
 playground.src = "/img/box.png"
 const foodImg = new Image()
-foodImg.src = "/img/food.png"
+foodImg.src = "/img/beer.png"
+const andrew = new Image()
+andrew.src = '/img/sqrt_andrew.png'
+const andrewTail = new Image()
+andrewTail.src = '/img/sqrt_andrew.png'
 
 // wrap and score //
 let box = 32;
@@ -38,19 +42,19 @@ function direction(event) {
 function drawCanvas() {
     ctx.drawImage(playground, 0,0);
     ctx.drawImage(foodImg, food.x, food.y)
-
-    for(let i=0; i < snake.length; i++) {
-        ctx.fillStyle = i == 0 ? 'green' : 'red';
-        ctx.fillRect(snake[i].x,snake[i].y, box, box);
+    for (let i = 0; i < snake.length; i++) {
+        if (i === 0) {
+            ctx.drawImage(andrew, snake[i].x, snake[i].y, box, box);
+        } else {
+            ctx.fillStyle = '#dda999';
+            ctx.fillRect(snake[i].x, snake[i].y, box, box);
+        }
     }
-    if('green' == 'red'){
-        console.log('1');
-    }
-
+    
     // draw text//
     ctx.fillStyle = 'white';
-    ctx.font = '40px Arial';
-    ctx.fillText(score, box * 2.5, box * 1.6)
+    ctx.font = '28px soviet font';
+    ctx.fillText(score, box * 6.8, box * 2.1);
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
