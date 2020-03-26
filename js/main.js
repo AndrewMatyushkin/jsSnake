@@ -9,6 +9,11 @@ const andrew = new Image()
 andrew.src = '/img/sqrt_andrew.png'
 const andrewTail = new Image()
 andrewTail.src = '/img/sqrt_andrew.png'
+const sneakHead2 = new Image()
+sneakHead2.src = '/img/sqrt_andrew.png'
+let sneakHead = new Image();
+sneakHead.src = "/img/sqrt_andrew.png";
+
 
 // wrap and score //
 let box = 32;
@@ -44,17 +49,17 @@ function drawCanvas() {
     ctx.drawImage(foodImg, food.x, food.y)
     for (let i = 0; i < snake.length; i++) {
         if (i === 0) {
-            ctx.drawImage(andrew, snake[i].x, snake[i].y, box, box);
-        } else {
-            ctx.fillStyle = '#dda999';
-            ctx.fillRect(snake[i].x, snake[i].y, box, box);
+            ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box);
+        } 
+        else {
+            ctx.drawImage(sneakHead2, snake[i].x, snake[i].y, box, box);
         }
     }
     
     // draw text//
     ctx.fillStyle = 'white';
     ctx.font = '28px soviet font';
-    ctx.fillText(score, box * 6.8, box * 2.1);
+    ctx.fillText(score, box * 6.6, box * 2.1);
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
