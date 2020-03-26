@@ -1,3 +1,4 @@
 Snake with javascript
 
-![play](https://user-images.githubusercontent.com/45914400/77659795-8e7d4b00-6f89-11ea-88c3-b63b835719a4.gif)
+![XgZH](https://user-images.githubusercontent.com/45914400/77660230-1c593600-6f8a-11ea-850c-423e3d9713b8.gif)
+
