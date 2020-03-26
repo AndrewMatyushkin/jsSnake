@@ -1,3 +1,3 @@
 Snake with javascript
 
-![](play.gif)
+[![Watch the video]()](play.gif)
