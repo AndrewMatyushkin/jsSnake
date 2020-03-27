@@ -118,4 +118,4 @@ function drawCanvas() {
 }
 
 //interval for func//
-let game = setInterval(drawCanvas, 100);
+let game = setInterval(drawCanvas, 80);
