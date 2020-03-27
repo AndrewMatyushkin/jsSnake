@@ -3,18 +3,27 @@ const ctx = canvas.getContext('2d')
 
 const playground = new Image()
 playground.src = "/img/box.png"
+
 const foodImg = new Image()
 foodImg.src = "/img/beer.png"
+
 const andrew = new Image()
 andrew.src = '/img/sqrt_andrew.png'
+
 const andrewTail = new Image()
 andrewTail.src = '/img/sqrt_andrew.png'
-const sneakHead2 = new Image()
+
+const sneakHead2 = new Image();
 sneakHead2.src = '/img/sqrt_andrew.png'
-let sneakHead = new Image();
-sneakHead.src = "/img/sqrt_andrew.png";
 
+const sneakHead = new Image();
+sneakHead.src = "/img/sqrt_andrew.png"
 
+const eatAudio = new Audio();
+eatAudio.src = '/audio/food.mp3'
+
+const loseAudio = new Audio();
+loseAudio.src = '/audio/lose.mp3'
 // wrap and score //
 let box = 32;
 let score = 0;
@@ -49,6 +58,7 @@ function drawCanvas() {
     ctx.drawImage(foodImg, food.x, food.y)
     for (let i = 0; i < snake.length; i++) {
         if (i === 0) {
+            
             ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box);
         } 
         else {
@@ -66,6 +76,7 @@ function drawCanvas() {
 
     // eat food + create massive for snake//
     if(snakeX == food.x && snakeY == food.y) {
+        eatAudio.play();
         score++;
         food = {
           x: Math.floor(Math.random() * 17 + 1) * box,
@@ -78,6 +89,7 @@ function drawCanvas() {
     // out of bounds //
     if(snakeX < box || snakeX > box * 17 || snakeY < 3 * box || snakeY > box * 17) {
         clearInterval(game);
+        loseAudio.play();
     }
 
     // eat tale//
@@ -85,6 +97,7 @@ function drawCanvas() {
         for(i = 0; i < arr.length; i++) {
             if(head.x == arr[i].x && head.y == arr[i].y) {
                 clearInterval(game);
+                loseAudio.play();
             }
         }
     }
