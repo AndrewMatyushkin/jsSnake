@@ -1,6 +1,10 @@
 const canvas = document.getElementById('box');
 const ctx = canvas.getContext('2d');
 
+const modal = document.getElementById('myModal');
+const btn = document.getElementById('openModal');
+const span = document.querySelectorAll('close-modal');
+
 const playground = new Image();
 playground.src = "./img/box.png";
 
@@ -24,8 +28,8 @@ let score = 0;
 
 // draw food and snake//
 let food = {
-    x: Math.floor((Math.random() * 17 + 1)) * box,
-    y: Math.floor((Math.random() * 15 + 3)) * box,
+    x: Math.floor((Math.random() * 17 + 1 )) * box ,
+    y: Math.floor((Math.random() * 15 + 3 )) * box,
 };
 let snake = [];
 snake[0] = {
@@ -37,14 +41,10 @@ document.addEventListener('keydown', direction);
 
 let dir;
 function direction(event) {
-    if(event.keyCode == 37 && dir != 'right')
-        dir = 'left';
-    else if(event.keyCode == 38 && dir != 'down')
-        dir = 'up';
-    else if(event.keyCode == 39 && dir != 'left')
-        dir = 'right';
-    else if(event.keyCode == 40 && dir != 'up')
-        dir = 'down';    
+    if(event.keyCode == 37 && dir != 'right'){dir = 'left'}
+    else if(event.keyCode == 38 && dir != 'down'){dir = 'up'}
+    else if(event.keyCode == 39 && dir != 'left'){dir = 'right'}
+    else if(event.keyCode == 40 && dir != 'up'){dir = 'down'}  
 }
 // draw func //
 function drawCanvas() {
@@ -68,17 +68,25 @@ function drawCanvas() {
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
 
+
     // eat food + create massive for snake//
     if(snakeX == food.x && snakeY == food.y) {
         eatAudio.play();
         score++;
+        function foodInSnake() {
+            if(snakeX == food.x  && snakeY == food.y){
+                food
+            }
+        }
         food = {
-          x: Math.floor(Math.random() * 17 + 1) * box,
-          y: Math.floor(Math.random() * 15 + 3) * box,
+          x: Math.floor(Math.random() * 17 + 1 ) * box ,
+          y: Math.floor(Math.random() * 15 + 3 ) * box ,
+          
         };
     } else {
           snake.pop();
     }
+
 
     // out of bounds //
     if(snakeX < box || snakeX > box * 17 || snakeY < 3 * box || snakeY > box * 17) {
