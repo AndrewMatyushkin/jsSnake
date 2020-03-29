@@ -15,6 +15,8 @@ const eatAudio = new Audio();
 eatAudio.src = './audio/eat.mp3';
 const loseAudio = new Audio();
 loseAudio.src = './audio/lose.mp3';
+const playAudio = new Audio();
+playAudio.src = './audio/play.mp3'
 // wrap and score //
 let box = 32;
 let score = 0;
@@ -35,6 +37,7 @@ document.addEventListener('keydown', direction);
 
 let dir;
 function direction(event) {
+    playAudio.play();
     if(event.keyCode == 37 && dir != 'right'){dir = 'left'}
     else if(event.keyCode == 38 && dir != 'down'){dir = 'up'}
     else if(event.keyCode == 39 && dir != 'left' ){dir = 'right'}
@@ -76,6 +79,7 @@ function drawCanvas() {
     // out of bounds //
     if(snakeX < box || snakeX > box * 17 || snakeY < 3 * box || snakeY > box * 17) {
         clearInterval(game);
+        playAudio.pause();
         loseAudio.play();
     }
 
@@ -83,8 +87,10 @@ function drawCanvas() {
     function eatTail(head, arr) {
         for(i = 0; i < arr.length; i++) {
             if(head.x == arr[i].x && head.y == arr[i].y) {
-                clearInterval(game);
+                playAudio.pause();
                 loseAudio.play();
+                
+                clearInterval(game);
             }
         }
     }
