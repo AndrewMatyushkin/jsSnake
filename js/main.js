@@ -1,8 +1,6 @@
 const canvas = document.getElementById('box');
 const ctx = canvas.getContext('2d');
-const modal = document.getElementById('myModal');
-const btn = document.getElementById('openModal');
-const span = document.querySelectorAll('close-modal');
+
 const playground = new Image();
 playground.src = "./img/box.png";
 const foodImg = new Image();
