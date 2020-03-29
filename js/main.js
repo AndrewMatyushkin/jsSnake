@@ -1,25 +1,18 @@
 const canvas = document.getElementById('box');
 const ctx = canvas.getContext('2d');
-
 const modal = document.getElementById('myModal');
 const btn = document.getElementById('openModal');
 const span = document.querySelectorAll('close-modal');
-
 const playground = new Image();
 playground.src = "./img/box.png";
-
 const foodImg = new Image();
 foodImg.src = "./img/beer.png";
-
 const sneakHead2 = new Image();
 sneakHead2.src = './img/sqrt_andrew.png';
-
 const sneakHead = new Image();
 sneakHead.src = "./img/sqrt_andrew.png";
-
 const eatAudio = new Audio();
-eatAudio.src = './audio/food.mp3';
-
+eatAudio.src = './audio/eat.mp3';
 const loseAudio = new Audio();
 loseAudio.src = './audio/lose.mp3';
 // wrap and score //
