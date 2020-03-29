@@ -35,7 +35,7 @@ document.addEventListener('keydown', direction);
 
 let dir;
 function direction(event) {
-    // playAudio.play();
+    playAudio.play();
     if(event.keyCode == 37 && dir != 'right'){dir = 'left'}
     else if(event.keyCode == 38 && dir != 'down'){dir = 'up'}
     else if(event.keyCode == 39 && dir != 'left' ){dir = 'right'}
