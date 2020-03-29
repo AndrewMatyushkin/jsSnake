@@ -35,7 +35,7 @@ document.addEventListener('keydown', direction);
 
 let dir;
 function direction(event) {
-    playAudio.play();
+    // playAudio.play();
     if(event.keyCode == 37 && dir != 'right'){dir = 'left'}
     else if(event.keyCode == 38 && dir != 'down'){dir = 'up'}
     else if(event.keyCode == 39 && dir != 'left' ){dir = 'right'}
@@ -46,33 +46,22 @@ const bE = document.getElementById('bE')
 const Egor = new Image();
 Egor.src = './img/sqrt_egor.png';
 console.log('bE: ', bE);
-if(bA.checked){
-    ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box);
-}
+
 // draw func //
 function drawCanvas() {
     ctx.drawImage(playground, 0,0);
     ctx.drawImage(foodImg, food.x, food.y);
     for (let i = 0; i < snake.length; i++) {
-        if (i === 0) {
-            if(bA.checked){
-                ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box);
-            }
-            if(bE.checked){
-                
-                ctx.drawImage(Egor, snake[i].x, snake[i].y, box, box);
-            }
-            else {
-                ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box);
-        
-            }} 
-        else {
-            if(bE !== bE.checked){
-                ctx.drawImage(sneakHead2, snake[i].x, snake[i].y, box, box)}
+        if(i == 0 ){
+            if(bA.checked){ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box)}
+            if(bE.checked){ctx.drawImage(Egor, snake[i].x, snake[i].y, box, box)}
         }
-
+        else{
+            if(bA.checked){ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box)}
+            if(bE.checked){ctx.drawImage(Egor, snake[i].x, snake[i].y, box, box)}
+        }
     }
-
+ 
     // draw text//
     ctx.fillStyle = 'white';
     ctx.font = '28px soviet font';
