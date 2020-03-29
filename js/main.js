@@ -1,20 +1,20 @@
 const canvas = document.getElementById('box');
 const ctx = canvas.getContext('2d');
-
 const playground = new Image();
 playground.src = "./img/box.png";
 const foodImg = new Image();
 foodImg.src = "./img/beer.png";
 const sneakHead2 = new Image();
-sneakHead2.src = './img/sqrt_andrew.png';
+sneakHead2.src = './img/normal_andrew.png';
 const sneakHead = new Image();
-sneakHead.src = "./img/sqrt_andrew.png";
+sneakHead.src = "./img/normal_andrew.png";
 const eatAudio = new Audio();
 eatAudio.src = './audio/eat.mp3';
 const loseAudio = new Audio();
 loseAudio.src = './audio/lose.mp3';
 const playAudio = new Audio();
 playAudio.src = './audio/play.mp3'
+playAudio.volume = 0.09;
 // wrap and score //
 let box = 32;
 let score = 0;
@@ -35,11 +35,19 @@ document.addEventListener('keydown', direction);
 
 let dir;
 function direction(event) {
-    playAudio.play();
+    // playAudio.play();
     if(event.keyCode == 37 && dir != 'right'){dir = 'left'}
     else if(event.keyCode == 38 && dir != 'down'){dir = 'up'}
     else if(event.keyCode == 39 && dir != 'left' ){dir = 'right'}
     else if(event.keyCode == 40 && dir != 'up' ){dir = 'down'}  
+}
+const bA = document.getElementById('bA')
+const bE = document.getElementById('bE')
+const Egor = new Image();
+Egor.src = '/img/sqrt_egor.png';
+console.log('bE: ', bE);
+if(bA.checked){
+    ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box);
 }
 // draw func //
 function drawCanvas() {
@@ -47,14 +55,24 @@ function drawCanvas() {
     ctx.drawImage(foodImg, food.x, food.y);
     for (let i = 0; i < snake.length; i++) {
         if (i === 0) {
-            
-            ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box);
-        } 
+            if(bA.checked){
+                ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box);
+            }
+            if(bE.checked){
+                
+                ctx.drawImage(Egor, snake[i].x, snake[i].y, box, box);
+            }
+            else {
+                ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box);
+        
+            }} 
         else {
-            ctx.drawImage(sneakHead2, snake[i].x, snake[i].y, box, box);
+            if(bE !== bE.checked){
+                ctx.drawImage(sneakHead2, snake[i].x, snake[i].y, box, box)}
         }
+
     }
-    
+
     // draw text//
     ctx.fillStyle = 'white';
     ctx.font = '28px soviet font';

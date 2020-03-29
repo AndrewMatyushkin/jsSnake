@@ -22,5 +22,4 @@ function burgerMenu(selector) {
         }
     }
 }
-
 burgerMenu('.burger-menu');
