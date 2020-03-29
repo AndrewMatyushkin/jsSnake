@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/burger.css">
     <title>SnakeJS</title>
 </head>
 <body>
-    <div class="wrapper">
-        <button id="openModal">Open menu</button>
-        <div id="myModal" class="modal">
-            <div class="modal-content"></div>
-            <span class="close-modal"></span>
-            <p>Window</p>
-        </div>
+    <div class="burger-menu ">
+        <a href="#" class="burger-menu__button">
+            <span class="burger-menu__lines"></span>
+        </a>
+        <nav class="burger-menu__nav">
+            <a href="#" class="burger-menu__link">12222222222</a>
+            <a href="#" class="burger-menu__link">2333333</a>
+            <a href="#" class="burger-menu__link">34444</a>
+            <a href="#" class="burger-menu__link">4</a>
+            <a href="#" class="burger-menu__link">5</a>
+        </nav>
+        <div class="buger-menu__overlay"></div>
     </div>
     <canvas id="box" width="800" height="800"></canvas>
 
+    <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/burger.js"></script>
 </body>
 </html>
