@@ -44,7 +44,7 @@ function direction(event) {
 const bA = document.getElementById('bA')
 const bE = document.getElementById('bE')
 const Egor = new Image();
-Egor.src = '/img/sqrt_egor.png';
+Egor.src = './img/sqrt_egor.png';
 console.log('bE: ', bE);
 if(bA.checked){
     ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box);
