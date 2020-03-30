@@ -73,9 +73,9 @@
 }
 
 .burger-menu__link, p {
-    padding: 30px;
+    padding: 10px;
     font-family: sans-serif;
-    font-size: 32px;
+    font-size: 22px;
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
@@ -105,9 +105,8 @@
 }
 
 input {
-    height: 35px;
-    width: 35px;
-    border-radius: none;
+    height: 20px;
+    width: 20px;
 }
 
 blockquote {
@@ -120,3 +119,4 @@ blockquote {
     letter-spacing: 0.2px;
     color: #fff;
 }
+

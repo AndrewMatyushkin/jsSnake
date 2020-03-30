@@ -12,11 +12,11 @@ Simons.src = './img/simons.png'
 
 const iBessilie = new Audio();
 iBessilie.src = './audio/igor/bessile.mp3'
-iBessilie.playbackRate = 2.5;
+iBessilie.playbackRate = 1.6;
 
 const iBottle = new Audio();
 iBottle.src = './audio/igor/bottle.mp3'
-iBottle.playbackRate = 2.5;
+iBottle.playbackRate = 1.9;
 
 
 
