@@ -19,6 +19,13 @@ loseAudio.src = './audio/lose.mp3';
 const playAudio = new Audio();
 playAudio.src = './audio/play.mp3'
 playAudio.volume = 0.09;
+function sleep(millis) {
+    var t = (new Date()).getTime();
+    var i = 0;
+    while (((new Date()).getTime() - t) < millis) {
+        i++;
+    }
+}
 const save = document.getElementsByName('hero');
 for (var i = 0; i < save.length; i++) {
 save[i].onclick = function() {
@@ -82,13 +89,15 @@ function drawCanvas() {
  
     // draw text//
     ctx.fillStyle = 'white';
-    ctx.font = '28px soviet font';
-    ctx.fillText(score, box * 6.6, box * 2.1);
+    ctx.font = '28px sans-serif';
+    ctx.fillText(score, box * 2, box * 2.1);
 
 
     // eat food + create massive for snake//
     if(snakeX == food.x && snakeY == food.y) {
-        eatAudio.play();
+        if(bA.checked){
+            eatAudio.play();
+        }
         score++;
         food = {
           x: (Math.floor(Math.random() * 17 + 1 ) * box) ,
@@ -98,22 +107,19 @@ function drawCanvas() {
           snake.pop();
     }
 
-
+    
     // out of bounds //
     if(snakeX < box || snakeX > box * 17 || snakeY < 3 * box || snakeY > box * 17) {
         loseAudio.play();
-        // playAudio.pause();
         clearInterval(game);
-        // window.location.reload(true, 1);
+        window.location.reload(true);
     }
 
     // eat tale//
     function eatTail(head, arr) {
         for(i = 0; i < arr.length; i++) {
             if(head.x == arr[i].x && head.y == arr[i].y) {
-                // playAudio.pause();
-                loseAudio.play();
-                clearInterval(game);
+
                 window.location.reload(true);
             }
         }
@@ -133,4 +139,5 @@ function drawCanvas() {
 }
 
 //interval for func//
-let game = setInterval(drawCanvas, 100);
+let game = setInterval(drawCanvas, 80);
+

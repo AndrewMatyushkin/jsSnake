@@ -104,6 +104,19 @@
     display: flex;
 }
 
-button {
-    width: 50px;
+input {
+    height: 35px;
+    width: 35px;
+    border-radius: none;
+}
+
+blockquote {
+    padding: 0 0 50px 0;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    color: #fff;
 }

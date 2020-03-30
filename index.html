@@ -16,16 +16,33 @@
             <p>Сменить персонажа</p>
             <div class="flex">
                 <form action="">
-                    <input type="radio" id="bA" name="hero" value="1" class="choose"><img src="./img/normal_andrew.png" alt="" id="A">
-                    <input type="radio" id="bE" name="hero" value="2" class="choose"><img src="./img/sqrt_egor.png" alt="" id="E">
-                    <input type="radio" id="bS" name="hero" value="3" class="choose"><img src="./img/simons.png" alt="" id="S">
-                    <input type="radio" id="bI" name="hero" value="4" class="choose"><img src="./img/igor.png" alt="" id="I">
+                    <div class="hero">
+                        <p>Андрей</p>
+                        <!-- <blockquote>просто Матюшкин, без лишних слов</blockquote> -->
+                        <img width="100px" src="./img/normal_andrew.png" alt="" id="A"><input type="radio" id="bA" name="hero" value="1" class="choose">
+                    </div>
+                    <div class="hero">
+                        <p>Егор</p>
+                        <!-- <blockquote>ебанутый какой-то<blockquote></blockquote> -->
+                        <img width="100px" src="./img/sqrt_egor.png" alt="" id="E"><input type="radio" id="bE" name="hero" value="2" class="choose">
+                    </div>
+                    <div class="hero">
+                        <p>Симонс</p>
+                        <!-- <blockquote>Ютубер и просто крутой ШУЕ парень <blockquote> -->
+                        <img width="100px" src="./img/simons.png" alt="" id="S"><input type="radio" id="bS" name="hero" value="3" class="choose">
+                    </div>
+                    <div class="hero">
+                        <p>Цыган</p>
+                        <!-- <blockquote>Этот лютый крышует все районы, его как-то хотели залить перцовкой, но наш отважный герой просто так не отступает !</blockquote> -->
+                        <img width="100px" src="./img/igor.png" alt="" id="I"><input type="radio" id="bI" name="hero" value="4" class="choose">
+                    </div>
+                    
                 </form>
             </div>
         </nav>
         <div class="buger-menu__overlay"></div>
     </div>
-    <canvas id="box" width="800" height="800"></canvas>
+    <canvas id="box" width="1000" height="900"></canvas>
 
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/main.js"></script>
