@@ -19,13 +19,7 @@ loseAudio.src = './audio/lose.mp3';
 const playAudio = new Audio();
 playAudio.src = './audio/play.mp3'
 playAudio.volume = 0.09;
-function sleep(millis) {
-    var t = (new Date()).getTime();
-    var i = 0;
-    while (((new Date()).getTime() - t) < millis) {
-        i++;
-    }
-}
+
 const save = document.getElementsByName('hero');
 for (var i = 0; i < save.length; i++) {
 save[i].onclick = function() {
@@ -90,7 +84,7 @@ function drawCanvas() {
     // draw text//
     ctx.fillStyle = 'white';
     ctx.font = '45px Spicy Rice';
-    ctx.fillText(score, box * 1.7, box * 2.2);
+    ctx.fillText(score, box * 1.9, box * 2.2);
 
 
     // eat food + create massive for snake//
