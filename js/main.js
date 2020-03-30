@@ -89,8 +89,8 @@ function drawCanvas() {
  
     // draw text//
     ctx.fillStyle = 'white';
-    ctx.font = '28px sans-serif';
-    ctx.fillText(score, box * 2, box * 2.1);
+    ctx.font = '45px Spicy Rice';
+    ctx.fillText(score, box * 1.7, box * 2.2);
 
 
     // eat food + create massive for snake//
