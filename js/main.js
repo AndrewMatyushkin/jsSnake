@@ -6,8 +6,12 @@ const foodImg = new Image();
 foodImg.src = "./img/beer.png";
 const sneakHead2 = new Image();
 sneakHead2.src = './img/normal_andrew.png';
-const sneakHead = new Image();
-sneakHead.src = "./img/normal_andrew.png";
+const Egor = new Image();
+Egor.src = './img/sqrt_egor.png';
+const Igor = new Image();
+Igor.src = './img/igor.png' 
+const Simons = new Image();
+Simons.src = './img/simons.png' 
 const eatAudio = new Audio();
 eatAudio.src = './audio/eat.mp3';
 const loseAudio = new Audio();
@@ -55,9 +59,8 @@ function direction(event) {
 }
 const bA = document.getElementById('bA')
 const bE = document.getElementById('bE')
-const Egor = new Image();
-Egor.src = './img/sqrt_egor.png';
-
+const bS = document.getElementById('bS')
+const bI = document.getElementById('bI')
 // draw func //
 function drawCanvas() {
     ctx.drawImage(playground, 0,0);
@@ -66,10 +69,14 @@ function drawCanvas() {
         if(i == 0 ){
             if(bA.checked){ctx.drawImage(sneakHead2, snake[i].x, snake[i].y, box, box)};
             if(bE.checked){ctx.drawImage(Egor, snake[i].x, snake[i].y, box, box)};
+            if(bS.checked){ctx.drawImage(Simons, snake[i].x, snake[i].y, box, box)};
+            if(bI.checked){ctx.drawImage(Igor, snake[i].x, snake[i].y, box, box)};
         }
         else{
             if(bA.checked){ctx.drawImage(sneakHead2, snake[i].x, snake[i].y, box, box)}
             if(bE.checked){ctx.drawImage(Egor, snake[i].x, snake[i].y, box, box)}
+            if(bS.checked){ctx.drawImage(Simons, snake[i].x, snake[i].y, box, box)};
+            if(bI.checked){ctx.drawImage(Igor, snake[i].x, snake[i].y, box, box)};
         }
     }
  
@@ -94,20 +101,20 @@ function drawCanvas() {
 
     // out of bounds //
     if(snakeX < box || snakeX > box * 17 || snakeY < 3 * box || snakeY > box * 17) {
-        clearInterval(game);
-        playAudio.pause();
         loseAudio.play();
-        window.location.reload(true);
+        // playAudio.pause();
+        clearInterval(game);
+        // window.location.reload(true, 1);
     }
 
     // eat tale//
     function eatTail(head, arr) {
         for(i = 0; i < arr.length; i++) {
             if(head.x == arr[i].x && head.y == arr[i].y) {
-                playAudio.pause();
+                // playAudio.pause();
                 loseAudio.play();
-                
                 clearInterval(game);
+                window.location.reload(true);
             }
         }
     }
