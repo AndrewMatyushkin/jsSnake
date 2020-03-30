@@ -15,6 +15,18 @@ loseAudio.src = './audio/lose.mp3';
 const playAudio = new Audio();
 playAudio.src = './audio/play.mp3'
 playAudio.volume = 0.09;
+const save = document.getElementsByName('hero');
+for (var i = 0; i < save.length; i++) {
+save[i].onclick = function() {
+    localStorage.setItem('Radio', this.value);
+}
+}
+let Radio = localStorage.getItem('Radio');
+if (Radio) {
+let inp = document.querySelector('input[name="hero"][value="' + Radio + '"]');
+if (inp) {
+    inp.checked = true;
+}}
 // wrap and score //
 let box = 32;
 let score = 0;
@@ -45,7 +57,6 @@ const bA = document.getElementById('bA')
 const bE = document.getElementById('bE')
 const Egor = new Image();
 Egor.src = './img/sqrt_egor.png';
-console.log('bE: ', bE);
 
 // draw func //
 function drawCanvas() {
@@ -53,11 +64,11 @@ function drawCanvas() {
     ctx.drawImage(foodImg, food.x, food.y);
     for (let i = 0; i < snake.length; i++) {
         if(i == 0 ){
-            if(bA.checked){ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box)}
-            if(bE.checked){ctx.drawImage(Egor, snake[i].x, snake[i].y, box, box)}
+            if(bA.checked){ctx.drawImage(sneakHead2, snake[i].x, snake[i].y, box, box)};
+            if(bE.checked){ctx.drawImage(Egor, snake[i].x, snake[i].y, box, box)};
         }
         else{
-            if(bA.checked){ctx.drawImage(sneakHead, snake[i].x, snake[i].y, box, box)}
+            if(bA.checked){ctx.drawImage(sneakHead2, snake[i].x, snake[i].y, box, box)}
             if(bE.checked){ctx.drawImage(Egor, snake[i].x, snake[i].y, box, box)}
         }
     }
@@ -86,6 +97,7 @@ function drawCanvas() {
         clearInterval(game);
         playAudio.pause();
         loseAudio.play();
+        window.location.reload(true);
     }
 
     // eat tale//
