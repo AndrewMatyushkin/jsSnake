@@ -4,21 +4,6 @@ const playground = new Image();
 playground.src = "./img/box.png";
 const foodImg = new Image();
 foodImg.src = "./img/beer.png";
-const sneakHead2 = new Image();
-sneakHead2.src = './img/normal_andrew.png';
-const Egor = new Image();
-Egor.src = './img/sqrt_egor.png';
-const Igor = new Image();
-Igor.src = './img/igor.png' 
-const Simons = new Image();
-Simons.src = './img/simons.png' 
-const eatAudio = new Audio();
-eatAudio.src = './audio/eat.mp3';
-const loseAudio = new Audio();
-loseAudio.src = './audio/lose.mp3';
-const playAudio = new Audio();
-playAudio.src = './audio/play.mp3'
-playAudio.volume = 0.09;
 
 const save = document.getElementsByName('hero');
 for (var i = 0; i < save.length; i++) {
@@ -35,6 +20,7 @@ if (inp) {
 // wrap and score //
 let box = 32;
 let score = 0;
+
 // draw food and snake//
 let snake = [];
 snake[0] = {
@@ -58,10 +44,6 @@ function direction(event) {
     else if(event.keyCode == 39 && dir != 'left' ){dir = 'right'}
     else if(event.keyCode == 40 && dir != 'up' ){dir = 'down'}  
 }
-const bA = document.getElementById('bA')
-const bE = document.getElementById('bE')
-const bS = document.getElementById('bS')
-const bI = document.getElementById('bI')
 // draw func //
 function drawCanvas() {
     ctx.drawImage(playground, 0,0);
@@ -80,19 +62,21 @@ function drawCanvas() {
             if(bI.checked){ctx.drawImage(Igor, snake[i].x, snake[i].y, box, box)};
         }
     }
- 
     // draw text//
     ctx.fillStyle = 'white';
     ctx.font = '45px Spicy Rice';
     ctx.fillText(score, box * 1.9, box * 2.2);
-
-
     // eat food + create massive for snake//
     if(snakeX == food.x && snakeY == food.y) {
-        if(bA.checked){
-            eatAudio.play();
+        if(bI.checked){
+            iBottle.play();
         }
         score++;
+        // every 10 bottles
+        if(score % 10 && bI.checked){
+            iBottle.pause();
+            iBessilie.play();
+        }
         food = {
           x: (Math.floor(Math.random() * 17 + 1 ) * box) ,
           y: (Math.floor(Math.random() * 15 + 3 ) * box) ,
@@ -100,12 +84,8 @@ function drawCanvas() {
     } else {
           snake.pop();
     }
-
-    
     // out of bounds //
     if(snakeX < box || snakeX > box * 17 || snakeY < 3 * box || snakeY > box * 17) {
-        loseAudio.play();
-        clearInterval(game);
         window.location.reload(true);
     }
 
@@ -113,7 +93,6 @@ function drawCanvas() {
     function eatTail(head, arr) {
         for(i = 0; i < arr.length; i++) {
             if(head.x == arr[i].x && head.y == arr[i].y) {
-
                 window.location.reload(true);
             }
         }
@@ -130,6 +109,7 @@ function drawCanvas() {
     }
     eatTail(head, snake);
     snake.unshift(head);
+
 }
 
 //interval for func//
