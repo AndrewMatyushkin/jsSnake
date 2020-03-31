@@ -56,3 +56,10 @@ canvas {
         display: block;
     }
 }
+
+@media (max-width:544px) {
+    .hidden {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+}
