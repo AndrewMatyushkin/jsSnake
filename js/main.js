@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById('box');
 const ctx = canvas.getContext('2d');
 const playground = new Image();
@@ -68,17 +69,6 @@ function drawCanvas() {
     ctx.fillStyle = 'white';
     ctx.font = '45px Spicy Rice';
     ctx.fillText(score, box * 1.9, box * 2.2);
-
-    let saveScore = localStorage.setItem('Save', score)
-    function compareScore() {
-        if(saveScore < score) {
-            saveScore = localStorage.setItem('save', score)
-            ctx.fillText(score, box * 1.9, box * 2.2);
-        } else {
-            ctx.fillText(saveScore, box * 8.9, box * 2.2);
-        }
-    }
-
     // eat food + create massive for snake//
     if(snakeX == food.x && snakeY == food.y) {
         if(bI.checked){
@@ -127,4 +117,5 @@ function drawCanvas() {
 
 //interval for func//
 let game = setInterval(drawCanvas, 80);
+
 
