@@ -7,9 +7,9 @@
 body {
     font-family: 'Spicy Rice', cursive;
     height: 100vh;
-    background: #de6161;
-    background: -webkit-linear-gradient(to right, #2657eb, #de6161);
-    background: linear-gradient(to right, #2657eb, #de6161);
+    background: #525252;
+    background: -webkit-linear-gradient(to right, #3d72b4, #525252);
+    background: linear-gradient(to right, #3d72b4, #525252);
     background-repeat: no-repeat;
     position: relative;
     
