@@ -30,3 +30,29 @@ canvas {
     height: 100vh;
 
 }
+.hidden {
+    position: absolute;
+    display: none;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #fff;
+}
+
+@media (max-width:1000px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #box, .burger-menu {
+        display: none;
+    }
+    .hidden {
+        display: block;
+    }
+}
