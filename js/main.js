@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById('box');
 const ctx = canvas.getContext('2d');
 const playground = new Image();
@@ -6,18 +5,6 @@ playground.src = "./img/box.png";
 const foodImg = new Image();
 foodImg.src = "./img/beer.png";
 
-const save = document.getElementsByName('hero');
-for (var i = 0; i < save.length; i++) {
-save[i].onclick = function() {
-    localStorage.setItem('Radio', this.value);
-}
-}
-let Radio = localStorage.getItem('Radio');
-if (Radio) {
-let inp = document.querySelector('input[name="hero"][value="' + Radio + '"]');
-if (inp) {
-    inp.checked = true;
-}}
 // wrap and score //
 let box = 32;
 let score = 0;
@@ -39,7 +26,6 @@ document.addEventListener('keydown', direction);
 
 let dir;
 function direction(event) {
-    // playAudio.play();
     if(event.keyCode == 37 && dir != 'right'){dir = 'left'}
     else if(event.keyCode == 38 && dir != 'down'){dir = 'up'}
     else if(event.keyCode == 39 && dir != 'left' ){dir = 'right'}
@@ -63,21 +49,25 @@ function drawCanvas() {
             if(bI.checked){ctx.drawImage(Igor, snake[i].x, snake[i].y, box, box)};
         }
     }
+
     // draw text//
     ctx.fillStyle = 'white';
     ctx.font = '45px Spicy Rice';
     ctx.fillText(score, box * 1.9, box * 2.2);
+
     // eat food + create massive for snake//
     if(snakeX == food.x && snakeY == food.y) {
         if(bI.checked){
             iBottle.play();
         }
         score++;
+
         // every 10 bottles
         if(score % 10 && bI.checked){
             iBottle.pause();
             iBessilie.play();
         }
+
         food = {
           x: (Math.floor(Math.random() * 17 + 1 ) * box) ,
           y: (Math.floor(Math.random() * 15 + 3 ) * box) ,
