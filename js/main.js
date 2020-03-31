@@ -37,8 +37,6 @@ let food = {
 
 document.addEventListener('keydown', direction);
 
-
-
 let dir;
 function direction(event) {
     // playAudio.play();
@@ -89,6 +87,7 @@ function drawCanvas() {
     }
     // out of bounds //
     if(snakeX < box || snakeX > box * 17 || snakeY < 3 * box || snakeY > box * 17) {
+        clearInterval(game);
         window.location.reload(true);
     }
 
@@ -96,6 +95,7 @@ function drawCanvas() {
     function eatTail(head, arr) {
         for(i = 0; i < arr.length; i++) {
             if(head.x == arr[i].x && head.y == arr[i].y) {
+                clearInterval(game);
                 window.location.reload(true);
             }
         }
