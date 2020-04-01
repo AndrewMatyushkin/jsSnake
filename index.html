@@ -1,44 +1,71 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/about.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/burger.css">
     <title>SnakeJS</title>
 </head>
+
 <body>
     <div id="particles-js" class="particles"></div>
     <h1 class="hidden">Извини, но игра только для ПК</h1>
+    <div class="navigation-wrapper">
+        <div class="navigation-button">
+            <i class="fa fa-bars">о игре</i>
+        </div>
+        <div class="navigation-menu">
+            <p> Простая змейка с заменой текстурок, присутствуют баги<br>
+                Игра создана с целью обучения JavaScript, но не обошлось без применения других технологий.
+                мобильная версия на данный момент не входит в планы. дизайн моментами может меняться 
+            </p>
+            <div class="social-links">
+                <a href="https://vk.com/id251459148" target="_blank"><img src="./img/vk.svg" width="60px" alt=""></a>
+                <a href="https://github.com/AndrewMatyushkin" target="_blank"><img src="./img/github.svg" width="60px" alt=""></a>
+            </div>
+        </div>
+    </div>
     <div class="burger-menu ">
         <a href="#" class="burger-menu__button">
             <span class="burger-menu__lines"></span>
         </a>
         <nav class="burger-menu__nav">
             <p>Сменить персонажа</p>
+            <hr>
             <div class="flex">
                 <form action="">
-                    <div class="hero">
+                    <div class="hero flex">
                         <p>Андрей</p>
                         <!-- <blockquote>просто Матюшкин, без лишних слов</blockquote> -->
-                        <img width="50px" src="./img/normal_andrew.png" alt="" id="A"><input type="radio" id="bA" name="hero" value="1" class="choose">
+                        <img width="50px" src="./img/normal_andrew.png" alt="" id="A"><input type="radio" id="bA"
+                            name="hero" value="1" class="choose">
                     </div>
-                    <div class="hero">
+                    <hr>
+                    <div class="hero flex">
                         <p>Егор</p>
                         <!-- <blockquote>ебанутый какой-то<blockquote></blockquote> -->
-                        <img width="50px" src="./img/sqrt_egor.png" alt="" id="E"><input type="radio" id="bE" name="hero" value="2" class="choose">
+                        <img width="50px" src="./img/sqrt_egor.png" alt="" id="E"><input type="radio" id="bE"
+                            name="hero" value="2" class="choose">
                     </div>
-                    <div class="hero">
+                    <hr>
+                    <div class="hero flex">
                         <p>Симонс</p>
                         <!-- <blockquote>Ютубер и просто крутой ШУЕ парень <blockquote> -->
-                        <img width="50px" src="./img/simons.png" alt="" id="S"><input type="radio" id="bS" name="hero" value="3" class="choose">
+                        <img width="50px" src="./img/simons.png" alt="" id="S"><input type="radio" id="bS" name="hero"
+                            value="3" class="choose">
                     </div>
-                    <div class="hero">
+                    <hr>
+                    <div class="hero flex">
                         <p>Цыган</p>
                         <!-- <blockquote>Этот лютый крышует все районы, его как-то хотели залить перцовкой, но наш отважный герой просто так не отступает !</blockquote> -->
-                        <img width="50px" src="./img/igor.png" alt="" id="I"><input type="radio" id="bI" name="hero" value="4" class="choose">
+                        <img width="50px" src="./img/igor.png" alt="" id="I"><input type="radio" id="bI" name="hero"
+                            value="4" class="choose">
                     </div>
+                    <hr>
                 </form>
             </div>
         </nav>
@@ -54,4 +81,5 @@
     <script src="./js/main.js"></script>
     <script src="./js/burger.js"></script>
 </body>
+
 </html>
