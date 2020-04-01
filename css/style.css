@@ -43,6 +43,15 @@ canvas {
     color: #fff;
 }
 
+.hero {
+    padding-top: 20px;
+}
+
+.choose {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
 @media (max-width:1000px) {
     body {
         display: flex;

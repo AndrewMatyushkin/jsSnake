@@ -6,13 +6,12 @@
 
 .burger-menu__button {
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 35px;
+    left: 50px;
     z-index: 30;
-    width: 80px;
-    height: 80px;
     border-radius: 50%;
-    background-color: #2a2a2a;
+    width: 50px;
+    height: 50px;
     transition: all 0.3s;
 }
 
@@ -62,7 +61,7 @@
     display: flex;
     flex-flow: column;
     height: 100%;
-    background-color: #2a2a2a;
+    background-color: #fff;
     overflow-y: auto;
     left: -100%;
     transition: all 0.3s;
@@ -80,7 +79,7 @@
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 5px;
-    color: #fff;
+    color: #000;
 }
 
 .burger-menu__link:hover {
